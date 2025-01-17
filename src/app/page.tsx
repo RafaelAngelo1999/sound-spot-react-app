@@ -1,4 +1,3 @@
-import { AlbumArtwork } from "@/components/music/album-artwork";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -7,19 +6,7 @@ export default function Home() {
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Button>Click me</Button>
-        <AlbumArtwork
-          key={"Teste"}
-          album={{
-            name: "React Rendezvous",
-            artist: "Ethan Byte",
-            cover:
-              "https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=300&dpr=2&q=80",
-          }}
-          className="w-[250px]"
-          aspectRatio="portrait"
-          width={250}
-          height={330}
-        />
+
         <Image
           className="dark:invert"
           src="/next.svg"

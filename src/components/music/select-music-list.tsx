@@ -1,4 +1,3 @@
-// components/music/SelectedMusicDataTable.tsx
 import {
   Table,
   TableBody,
@@ -8,13 +7,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { Button } from "../ui/button";
 import { Trash2 } from "lucide-react"; // Para o ícone de excluir

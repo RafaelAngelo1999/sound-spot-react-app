@@ -1,16 +1,3 @@
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-
 export function MusicEmptyPlaceholder() {
   return (
     <div className="flex h-[450px] shrink-0 items-center justify-center rounded-md border border-dashed">
@@ -36,30 +23,6 @@ export function MusicEmptyPlaceholder() {
         <p className="mb-4 mt-2 text-sm text-muted-foreground">
           Você não adicionou nenhuma música. Adicione um abaixo. 👇
         </p>
-        {/* <Dialog>
-          <DialogTrigger asChild>
-            <Button size="sm" className="relative">
-              Adicionar Música
-            </Button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Add Música</DialogTitle>
-              <DialogDescription>
-                Copy and paste the podcast feed URL to import.
-              </DialogDescription>
-            </DialogHeader>
-            <div className="flex gap-4 py-4">
-              <div className="">
-                <Label htmlFor="url">Podcast URL</Label>
-                <Input id="url" placeholder="https://example.com/feed.xml" />
-              </div>
-            </div>
-            <DialogFooter>
-              <Button>Import Podcast</Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog> */}
       </div>
     </div>
   );

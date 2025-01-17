@@ -1,0 +1,69 @@
+Table customers {
+  id SERIAL [pk]
+  name VARCHAR(255) [not null]
+  cpf VARCHAR(14) [unique]
+  contact VARCHAR(255)
+  address VARCHAR(255)
+  email VARCHAR(255)
+  birth_date DATE
+  customer_type ENUM('individual', 'business')
+  created_at TIMESTAMP 
+  updated_at TIMESTAMP 
+}
+
+Table stores {
+  id SERIAL [pk]
+  name VARCHAR(255) [not null]
+  address VARCHAR(255)
+  status ENUM('active', 'inactive') [default: 'active']
+  created_at TIMESTAMP 
+  updated_at TIMESTAMP 
+  customer_id INTEGER [ref: > customers.id]
+  spotify_integration_id INTEGER [ref: > spotify_integrations.id]
+}
+
+Table orders {
+  id SERIAL [pk]
+  order_number INTEGER [not null]
+  customer_name VARCHAR(255) [not null]
+  store_id INTEGER [ref: > stores.id]
+  order_status ENUM('pending', 'processing', 'completed', 'canceled') [default: 'pending']
+  payment_id INTEGER [ref: > payments.id]
+  created_at TIMESTAMP 
+  total_amount DECIMAL(10, 2) [not null]
+}
+
+Table payments {
+  id SERIAL [pk]
+  order_id INTEGER [ref: > orders.id]
+  payment_id VARCHAR(255)
+  payment_status ENUM('pending', 'paid', 'failed') [default: 'pending']
+  payment_method ENUM('boleto', 'credit_card', 'pix', 'other')
+  amount DECIMAL(10, 2) [not null]
+  payment_date TIMESTAMP
+  created_at TIMESTAMP 
+  updated_at TIMESTAMP 
+}
+
+Table order_items {
+  id SERIAL [pk]
+  order_id INTEGER [ref: > orders.id]
+  description VARCHAR(255) [not null]
+  quantity INTEGER [not null]
+  unit_price DECIMAL(10, 2) [not null]
+  total_price DECIMAL(10, 2) [not null]
+  created_at TIMESTAMP 
+  updated_at TIMESTAMP 
+}
+
+Table spotify_integrations {
+  id SERIAL [pk]
+  client_id VARCHAR(255) [not null]
+  client_secret VARCHAR(255) [not null]
+  access_token VARCHAR(255)
+  refresh_token VARCHAR(255)
+  scopes TEXT[]
+  token_expiration TIMESTAMP
+  created_at TIMESTAMP 
+  updated_at TIMESTAMP 
+}

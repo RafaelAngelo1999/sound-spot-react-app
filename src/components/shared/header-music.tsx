@@ -14,7 +14,7 @@ export const HeaderMusic: React.FC = () => {
         </TabsTrigger>
       </TabsList>
       <div className="ml-auto mr-4">
-        <CartIcon itemCount={1} />
+        <CartIcon itemCount={3} />
       </div>
     </div>
   );

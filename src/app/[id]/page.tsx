@@ -26,7 +26,7 @@ export default function MusicPage() {
             }
           />
           <div className="my-4">
-            {true ? <MusicEmptyPlaceholder /> : <PlayListMusic />}
+            {false ? <MusicEmptyPlaceholder /> : <PlayListMusic />}
           </div>
         </TabsContent>
       </Tabs>

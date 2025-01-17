@@ -6,19 +6,19 @@ const selectedMusic = [
   {
     id: 1,
     title: "Fantasma",
-    artist: "Gordão do PC e DJ Farnetti",
+    artist: "Gordão do PC e DJ",
     albumArt: "/assets/fantasma.jpg",
   },
   {
     id: 2,
     title: "Fantasma 2",
-    artist: "Gordão do PC e DJ Farnetti 2",
+    artist: "Gordão do PC e DJ 2",
     albumArt: "/assets/fantasma.jpg",
   },
   {
     id: 3,
     title: "Fantasma 3",
-    artist: "Gordão do PC e DJ Farnetti 3",
+    artist: "Gordão do PC e DJ 3",
     albumArt: "/assets/fantasma.jpg",
   },
 

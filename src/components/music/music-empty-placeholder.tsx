@@ -1,3 +1,5 @@
+import { Button } from "../ui/button";
+
 export function MusicEmptyPlaceholder() {
   return (
     <div className="flex h-[450px] shrink-0 items-center justify-center rounded-md border border-dashed">
@@ -16,13 +18,13 @@ export function MusicEmptyPlaceholder() {
           <path d="M11 17a1 1 0 0 1 2 0c0 .5-.34 3-.5 4.5a.5.5 0 0 1-1 0c-.16-1.5-.5-4-.5-4.5ZM8 14a5 5 0 1 1 8 0" />
           <path d="M17 18.5a9 9 0 1 0-10 0" />
         </svg>
-
         <h3 className="mt-4 text-lg font-semibold">
           Nenhuma música adicionada
         </h3>
         <p className="mb-4 mt-2 text-sm text-muted-foreground">
-          Você não adicionou nenhuma música. Adicione um abaixo. 👇
+          Você não adicionou nenhuma música. 😢
         </p>
+        <Button>Adicionar Musica 🚀</Button>;
       </div>
     </div>
   );

@@ -36,7 +36,7 @@ export function MusicEmptyPlaceholder() {
         <p className="mb-4 mt-2 text-sm text-muted-foreground">
           Você não adicionou nenhuma música. Adicione um abaixo. 👇
         </p>
-        <Dialog>
+        {/* <Dialog>
           <DialogTrigger asChild>
             <Button size="sm" className="relative">
               Adicionar Música
@@ -49,8 +49,8 @@ export function MusicEmptyPlaceholder() {
                 Copy and paste the podcast feed URL to import.
               </DialogDescription>
             </DialogHeader>
-            <div className="grid gap-4 py-4">
-              <div className="grid gap-2">
+            <div className="flex gap-4 py-4">
+              <div className="">
                 <Label htmlFor="url">Podcast URL</Label>
                 <Input id="url" placeholder="https://example.com/feed.xml" />
               </div>
@@ -59,7 +59,7 @@ export function MusicEmptyPlaceholder() {
               <Button>Import Podcast</Button>
             </DialogFooter>
           </DialogContent>
-        </Dialog>
+        </Dialog> */}
       </div>
     </div>
   );

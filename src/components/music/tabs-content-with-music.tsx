@@ -16,7 +16,7 @@ const TabsContentWithMusic: React.FC<TabsContentWithMusicProps> = ({
       <h2 className="text-2xl font-semibold tracking-tight">
         Selecionar Músicas
       </h2>
-      <div className="flex justify-end mb-4">
+      <div className="flex justify-end mb-2 mt-2">
         <SearchInput value={"teste"} onChange={() => {}} />
       </div>
       <div>
@@ -26,20 +26,30 @@ const TabsContentWithMusic: React.FC<TabsContentWithMusicProps> = ({
       </div>
     </div>
 
+    {/* AlbumList component with only 3 albums */}
     <div className="my-4">
       <AlbumList
-        albums={albums.slice(0, 4)}
-        aspectRatio="portrait"
-        width={250}
-        height={330}
+        albums={albums.slice(0, 3)}
+        aspectRatio={"portrait"}
+        width={800}
+        height={800}
+      />
+    </div>
+
+    <div className="my-4">
+      <AlbumList
+        albums={albums.slice(4)}
+        aspectRatio={"portrait"}
+        width={340}
+        height={340}
       />
     </div>
     <div className="my-4">
       <AlbumList
         albums={albums.slice(4)}
         aspectRatio={"portrait"}
-        width={350}
-        height={350}
+        width={340}
+        height={340}
       />
     </div>
   </TabsContent>

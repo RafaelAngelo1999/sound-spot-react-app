@@ -9,9 +9,7 @@ export const HeaderMusic: React.FC = () => {
         <TabsTrigger value="music" className="relative">
           Musicas
         </TabsTrigger>
-        <TabsTrigger value="live" disabled>
-          Pagamento
-        </TabsTrigger>
+        <TabsTrigger value="payments">Pagamento</TabsTrigger>
       </TabsList>
       <div className="ml-auto mr-4">
         <CartIcon itemCount={3} />

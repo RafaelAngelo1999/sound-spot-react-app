@@ -12,6 +12,12 @@
 
 ---
 
+## 🖼️ **Capturas de Tela**
+**Página inicial:**  
+![Página inicial](https://raw.githubusercontent.com/RafaelAngelo1999/sound-spot-react-app/refs/heads/main/public/assets/app.jpg)
+
+---
+
 ## 🚀 **Tecnologias Utilizadas**
 
 ### 📦 **Bibliotecas principais**
@@ -63,21 +69,6 @@
    ```
    http://localhost:3000
    ```
-
----
-
-## 🖼️ **Capturas de Tela**
-**Página inicial:**  
-![Página inicial](http:imagem)
-
-**Playlist de músicas:**  
-![Playlist](http:imagem)
-
-**Listagem:**  
-![Playlist](http:imagem)
-
-**Pagamento:**  
-![Pagamento](http:imagem)
 
 ---
 

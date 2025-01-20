@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎵 Sound Spot React App
 
-## Getting Started
+**Sound Spot React App** é uma aplicação estilo **Jukebox**, projetada para bares da região. Ela oferece aos clientes uma experiência interativa para selecionar músicas, visualizar playlists, e fazer pagamentos para adicionar músicas à fila do bar. 🎶🍻  
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌟 **Funcionalidades**
+- 🚩 **Identificação única por bar**: Cada bar possui um ID único no caminho da aplicação (ex.: `/bar-id`) para acessar sua playlist personalizada.
+- 📜 **Playlist interativa**: Os clientes podem visualizar todas as músicas disponíveis para seleção.
+- 💳 **Fluxo de pagamento integrado**: Após a seleção de músicas, o cliente segue para um fluxo de pagamento seguro. Após a confirmação, a música é adicionada à fila.
+- 🕒 **Atualização em tempo real**: A playlist do bar é atualizada automaticamente, refletindo as músicas em fila.
+
+---
+
+## 🚀 **Tecnologias Utilizadas**
+
+### 📦 **Bibliotecas principais**
+- **[ShadCN](https://shadcn.dev/)**  
+  - Biblioteca de UI modular e altamente personalizável.  
+  - O diferencial dessa lib é que os componentes (como inputs) são importados diretamente como código no projeto, permitindo total controle sobre o design.  
+
+- **[Lucide React](https://lucide.dev/)**  
+  - Utilizada para ícones estilizados e modernos, garantindo uma interface visualmente atraente.  
+
+- **[Next.js](https://nextjs.org/)**  
+  - Framework React para criação de aplicações web rápidas e escaláveis.  
+  - Considerações:  
+    - 🚀 Renderização híbrida (SSR e SSG).  
+    - 🌐 Gerenciamento de rotas simplificado, essencial para os IDs dos bares.  
+
+- **[Zustand](https://zustand-demo.pmnd.rs/)**  
+  - Utilizada para gerenciamento de estado de forma leve e eficiente.  
+  - Perfeita para compartilhar o estado da playlist e seleção de músicas entre componentes.  
+
+- **[React Query](https://tanstack.com/query/latest)**  
+  - Gerenciamento de requisições assíncronas com cache e revalidação automática.  
+  - Otimiza chamadas à API e mantém os dados sincronizados em tempo real.  
+
+---
+
+## 🛠️ **Como rodar o projeto**
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/RafaelAngelo1999/sound-spot-react-app.git
+   ```
+2. Entre no diretório do projeto:
+   ```bash
+   cd sound-spot-react-app
+   ```
+3. Instale as dependências:
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
+4. Rode o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   # ou
+   yarn dev
+   ```
+5. Acesse no navegador:
+   ```
+   http://localhost:3000
+   ```
+
+---
+
+## 🖼️ **Capturas de Tela**
+**Página inicial:**  
+![Página inicial](http:imagem)
+
+**Playlist de músicas:**  
+![Playlist](http:imagem)
+
+**Listagem:**  
+![Playlist](http:imagem)
+
+**Pagamento:**  
+![Pagamento](http:imagem)
+
+---
+
+## 📚 **Estrutura do Projeto**
+```plaintext
+sound-spot-react-app/
+├── public/               # Arquivos estáticos (imagens, fontes)
+├── src/                  # Código-fonte da aplicação
+│   ├── components/       # Componentes reutilizáveis
+│   ├── pages/            # Páginas da aplicação
+│   ├── store/            # Estados globais (Zustand)
+│   ├── hooks/            # Hooks personalizados
+│   ├── services/         # Configuração e chamadas da API
+│   └── styles/           # Estilização geral
+├── .env.example          # Arquivo de exemplo para variáveis de ambiente
+├── README.md             # Documentação do projeto
+└── package.json          # Configurações de dependências
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ **Contribuição**
+Contribuições são bem-vindas!  
+1. Faça um fork do repositório.  
+2. Crie uma nova branch para sua feature ou correção:  
+   ```bash
+   git checkout -b minha-feature
+   ```
+3. Envie seu PR após os ajustes.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📄 **Licença**
+Este projeto está licenciado sob a **MIT License**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+💻 Desenvolvido com ❤️ por [Rafael Angelo](https://github.com/RafaelAngelo1999).

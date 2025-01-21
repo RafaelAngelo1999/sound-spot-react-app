@@ -12,7 +12,7 @@ export const HeaderMusic: React.FC = () => {
         <TabsTrigger value="payments">Pagamento</TabsTrigger>
       </TabsList>
       <div className="ml-auto mr-4">
-        <CartIcon itemCount={3} />
+        <CartIcon itemCount={0} />
       </div>
     </div>
   );

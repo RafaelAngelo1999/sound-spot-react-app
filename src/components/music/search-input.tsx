@@ -33,7 +33,7 @@ const SearchCommand: React.FC<SearchCommandProps> = ({ onSelect }) => {
   return (
     <Command className="rounded-lg border shadow-md md:min-w-[450px]">
       <CommandInput
-        placeholder="Type a command or search..."
+        placeholder="Digite para pesquisar..."
         value={searchTerm}
         onChange={handleSearchChange}
         className="w-full px-6 py-4 text-lg border-primary focus:ring-primary focus:outline-none rounded-lg"

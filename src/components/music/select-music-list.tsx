@@ -85,9 +85,9 @@ const SelectedMusicDataTable: React.FC<SelectedMusicDataTableProps> = ({
           </svg>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">$9.00</div>
+          <div className="text-2xl font-bold">$3.00</div>
           <p className="text-xs text-muted-foreground">
-            6 músicas selecionadas
+            3 músicas selecionadas
           </p>
         </CardContent>
       </Card>

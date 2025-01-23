@@ -1,31 +1,33 @@
 import { PlusCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SelectedMusicList from "@/components/music/select-music-list";
+import useClientStore from "@/store/useClientStore"; // Importando o Zustand
 
-const selectedMusic = [
-  {
-    id: 1,
-    title: "Fantasma",
-    artist: "Gordão do PC e DJ",
-    albumArt: "/assets/fantasma.jpg",
-  },
-  {
-    id: 2,
-    title: "Fantasma 2",
-    artist: "Gordão do PC e DJ 2",
-    albumArt: "/assets/fantasma.jpg",
-  },
-  {
-    id: 3,
-    title: "Fantasma 3",
-    artist: "Gordão do PC e DJ 3",
-    albumArt: "/assets/fantasma.jpg",
-  },
+const PlayListMusic: React.FC = () => {
+  // Acessando a playlist do Zustand
+  const playlist = useClientStore((state) => state.playlist);
+  const addSongToPlaylist = useClientStore((state) => state.addSongToPlaylist);
+  const removeSongFromPlaylist = useClientStore(
+    (state) => state.removeSongFromPlaylist
+  );
 
-  // mais músicas mockadas
-];
+  // Função para adicionar uma nova música
+  const handleAddMusic = () => {
+    const newSong = {
+      id: `${playlist.length + 1}`, // Gerando um ID único
+      title: "Nova Música", // Título mockado para exemplo
+      artist: "Artista Exemplo", // Artista mockado
+      albumArt: "/assets/fantasma.jpg", // Imagem mockada
+    };
+    addSongToPlaylist(newSong); // Adicionando a música ao Zustand
+  };
 
-export const PlayListMusic: React.FC = () => {
+  // Função para remover uma música
+  const handleRemoveMusic = (nameSong: string) => {
+    removeSongFromPlaylist(nameSong); // Removendo a música do Zustand
+  };
+  console.log(playlist);
+
   return (
     <div className="overflow-x-hidden">
       <div className="border-t">
@@ -36,14 +38,14 @@ export const PlayListMusic: React.FC = () => {
                 <h2 className="text-2xl font-semibold tracking-tight">
                   Seleção
                 </h2>
-                <Button onClick={() => {}} className="flex items-center">
+                <Button onClick={handleAddMusic} className="flex items-center">
                   <PlusCircle className="mr-2" />
                   Add Música
                 </Button>
               </div>
               <SelectedMusicList
-                musicList={selectedMusic}
-                onRemove={() => {}}
+                musicList={playlist} // Usando a playlist do Zustand
+                onRemove={handleRemoveMusic} // Passando a função para remover músicas
               />
             </div>
           </div>
@@ -52,3 +54,5 @@ export const PlayListMusic: React.FC = () => {
     </div>
   );
 };
+
+export default PlayListMusic;

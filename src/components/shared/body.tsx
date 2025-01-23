@@ -4,7 +4,7 @@ interface BodyProps {
 
 export const Body: React.FC<BodyProps> = ({ children }) => {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden pt-16">
       <div className="border-t">
         <div className="bg-background">
           <div className="w-full px-4 py-6 lg:px-8">{children}</div>

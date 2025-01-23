@@ -38,25 +38,6 @@ const SearchCommand: React.FC<SearchCommandProps> = ({ onSelect }) => {
         onChange={handleSearchChange}
         className="w-full px-6 py-4 text-lg border-primary focus:ring-primary focus:outline-none rounded-lg"
       />
-      {/* <CommandList>
-        <CommandEmpty>No results found.</CommandEmpty>
-        <CommandGroup heading="Suggestions">
-          {mockData
-            .filter((item) =>
-              item.name.toLowerCase().includes(searchTerm.toLowerCase())
-            )
-            .map((item) => (
-              <CommandItem key={item.name} onClick={() => onSelect(item.name)}>
-                {item.icon}
-                <span>{item.name}</span>
-                <CommandShortcut>{item.shortcut}</CommandShortcut>
-              </CommandItem>
-            ))}
-        </CommandGroup>
-        <CommandSeparator />
-        <CommandGroup heading="Settings">
-        </CommandGroup>
-      </CommandList> */}
     </Command>
   );
 };

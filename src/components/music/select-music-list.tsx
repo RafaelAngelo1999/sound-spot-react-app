@@ -14,14 +14,26 @@ import { Trash2 } from "lucide-react"; // Para o ícone de excluir
 import Image from "next/image"; // Importe o Image do Next.js
 
 interface SelectedMusicDataTableProps {
-  musicList: { id: number; title: string; artist: string; albumArt: string }[];
-  onRemove: (id: number) => void;
+  musicList: {
+    id: number;
+    title: string;
+    artist: string;
+    cover: string;
+    value: number;
+  }[];
+  onRemove: (songName: string) => void;
 }
 
 const SelectedMusicDataTable: React.FC<SelectedMusicDataTableProps> = ({
   musicList,
   onRemove,
 }) => {
+  const getTotalValue = (): string => {
+    const total = musicList.reduce((sum, music) => sum + music.value, 0);
+    return total.toFixed(2); // Retorna o valor como string com 2 casas decimais
+  };
+
+  console.log(musicList);
   return (
     <>
       <div className="overflow-x-auto bg-background p-4 rounded-md shadow-md">
@@ -38,9 +50,9 @@ const SelectedMusicDataTable: React.FC<SelectedMusicDataTableProps> = ({
               <TableRow key={music.id}>
                 <TableCell>
                   <Image
-                    src={music.albumArt}
-                    alt={music.title}
-                    width={48} // Definindo um tamanho fixo para a imagem
+                    src={music.cover}
+                    alt={music.name}
+                    width={48}
                     height={48}
                     className="rounded"
                     layout="intrinsic"
@@ -48,7 +60,7 @@ const SelectedMusicDataTable: React.FC<SelectedMusicDataTableProps> = ({
                 </TableCell>
                 <TableCell>
                   <div>
-                    <div className="font-semibold text-lg">{music.title}</div>
+                    <div className="font-semibold text-lg">{music.name}</div>
                     <div className="text-sm text-muted-foreground">
                       {music.artist}
                     </div>
@@ -57,7 +69,7 @@ const SelectedMusicDataTable: React.FC<SelectedMusicDataTableProps> = ({
                 <TableCell>
                   <Button
                     variant="outline"
-                    onClick={() => onRemove(music.id)}
+                    onClick={() => onRemove(music.name)}
                     size="icon"
                   >
                     <Trash2 size={16} />
@@ -85,9 +97,9 @@ const SelectedMusicDataTable: React.FC<SelectedMusicDataTableProps> = ({
           </svg>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">$3.00</div>
+          <div className="text-2xl font-bold">R${getTotalValue()}</div>
           <p className="text-xs text-muted-foreground">
-            3 músicas selecionadas
+            {musicList.length} músicas selecionadas
           </p>
         </CardContent>
       </Card>

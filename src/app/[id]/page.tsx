@@ -7,15 +7,29 @@ import { MusicEmptyPlaceholder } from "@/components/music/music-empty-placeholde
 import SectionTitle from "@/components/music/section-title";
 import { Body } from "@/components/shared/body";
 import { HeaderMusic } from "@/components/shared/header-music";
-import { PlayListMusic } from "@/components/shared/playlist-music";
 
 import PaymentOptionsCard from "@/components/music/payment-options-card";
 import OrderSummaryCard from "@/components/music/order-summary-card";
 import PaymentActions from "@/components/music/payment-actions";
+import { useFetchClientData } from "@/hooks/useFetchClientData";
+import useClientStore from "@/store/useClientStore";
+import PlayListMusic from "@/components/shared/playlist-music";
 
 export default function MusicPage() {
+  const { isLoading, isError, pathname } = useFetchClientData();
+  const client = useClientStore((state: any) => state.client);
+  const playlist = useClientStore((state) => state.playlist);
+
+  if (isLoading) return <div>Carregando...</div>;
+  if (isError) return <div>Erro ao buscar os dados</div>;
+
   return (
     <Body>
+      {/* <div>
+        <h1>Path atual: {pathname}</h1>
+        <h2>Informações do cliente:</h2>
+        <pre>{JSON.stringify(client, null, 2)}</pre>
+      </div> */}
       <Tabs defaultValue="playlist" className="h-full space-y-4">
         <HeaderMusic />
         <TabsContentWithMusic albums={listenNowAlbums} />
@@ -30,7 +44,11 @@ export default function MusicPage() {
             }
           />
           <div className="my-4">
-            {true ? <MusicEmptyPlaceholder /> : <PlayListMusic />}
+            {playlist.length < 1 ? (
+              <MusicEmptyPlaceholder />
+            ) : (
+              <PlayListMusic />
+            )}
           </div>
         </TabsContent>
         <TabsContent

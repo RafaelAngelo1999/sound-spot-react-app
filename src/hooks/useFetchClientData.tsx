@@ -11,7 +11,7 @@ export function useFetchClientData() {
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["clientData", id], // Chave única como array
-    queryFn: () => fetchClient(id), // Função de busca
+    queryFn: () => fetchClient(id as string), // Função de busca
     enabled: !!id, // Apenas executa se o ID existir
     retry: 3, // Tenta 3 vezes em caso de falha
     staleTime: 300000, // Cache de 5 minutos

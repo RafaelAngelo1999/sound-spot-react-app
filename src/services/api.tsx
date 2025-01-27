@@ -1,6 +1,6 @@
 const MOCK_FAKE = true;
 
-export async function fetchClient(clientId: string): Promise<any> {
+export async function fetchClient(clientId?: string): Promise<any> {
   try {
     if (MOCK_FAKE) {
       return { name: "Bar do Mexirica", id: 30 };

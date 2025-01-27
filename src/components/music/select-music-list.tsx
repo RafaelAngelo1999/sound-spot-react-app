@@ -16,6 +16,7 @@ import Image from "next/image"; // Importe o Image do Next.js
 interface SelectedMusicDataTableProps {
   musicList: {
     id: number;
+    name: string;
     title: string;
     artist: string;
     cover: string;
@@ -46,7 +47,7 @@ const SelectedMusicDataTable: React.FC<SelectedMusicDataTableProps> = ({
             </TableRow>
           </TableHeader>
           <TableBody>
-            {musicList.map((music, _) => (
+            {musicList.map((music) => (
               <TableRow key={music.id}>
                 <TableCell>
                   <Image

@@ -16,8 +16,7 @@ import useClientStore from "@/store/useClientStore";
 import PlayListMusic from "@/components/shared/playlist-music";
 
 export default function MusicPage() {
-  const { isLoading, isError, pathname } = useFetchClientData();
-  const client = useClientStore((state: any) => state.client);
+  const { isLoading, isError } = useFetchClientData();
   const playlist = useClientStore((state) => state.playlist);
 
   if (isLoading) return <div>Carregando...</div>;
@@ -25,11 +24,6 @@ export default function MusicPage() {
 
   return (
     <Body>
-      {/* <div>
-        <h1>Path atual: {pathname}</h1>
-        <h2>Informações do cliente:</h2>
-        <pre>{JSON.stringify(client, null, 2)}</pre>
-      </div> */}
       <Tabs defaultValue="playlist" className="h-full space-y-4">
         <HeaderMusic />
         <TabsContentWithMusic albums={listenNowAlbums} />

@@ -18,7 +18,7 @@ const TabsContentWithMusic: React.FC<TabsContentWithMusicProps> = ({
           Selecionar Músicas
         </h2>
         <div className="flex justify-end mb-2 mt-2">
-          <SearchInput value={"teste"} onChange={() => {}} />
+          <SearchInput value={"teste"} />
         </div>
         <div>
           <p className="text-sm text-muted-foreground">

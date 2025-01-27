@@ -14,14 +14,16 @@ import { Trash2 } from "lucide-react"; // Para o ícone de excluir
 import Image from "next/image"; // Importe o Image do Next.js
 
 interface SelectedMusicDataTableProps {
-  musicList: {
-    id: number;
-    name: string;
-    title: string;
-    artist: string;
-    cover: string;
-    value: number;
-  }[];
+  musicList:
+    | {
+        id: number;
+        name: string;
+        title: string;
+        artist: string;
+        cover: string;
+        value: number;
+      }[]
+    | any[];
   onRemove: (songName: string) => void;
 }
 

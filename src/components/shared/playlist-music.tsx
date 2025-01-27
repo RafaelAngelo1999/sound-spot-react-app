@@ -4,27 +4,24 @@ import SelectedMusicList from "@/components/music/select-music-list";
 import useClientStore from "@/store/useClientStore"; // Importando o Zustand
 
 const PlayListMusic: React.FC = () => {
-  // Acessando a playlist do Zustand
   const playlist = useClientStore((state) => state.playlist);
   const addSongToPlaylist = useClientStore((state) => state.addSongToPlaylist);
   const removeSongFromPlaylist = useClientStore(
     (state) => state.removeSongFromPlaylist
   );
 
-  // Função para adicionar uma nova música
   const handleAddMusic = () => {
     const newSong = {
-      id: `${playlist.length + 1}`, // Gerando um ID único
-      title: "Nova Música", // Título mockado para exemplo
-      artist: "Artista Exemplo", // Artista mockado
-      albumArt: "/assets/fantasma.jpg", // Imagem mockada
+      id: `${playlist.length + 1}`,
+      title: "Nova Música",
+      artist: "Artista Exemplo",
+      albumArt: "/assets/fantasma.jpg",
     };
-    addSongToPlaylist(newSong); // Adicionando a música ao Zustand
+    addSongToPlaylist(newSong);
   };
 
-  // Função para remover uma música
   const handleRemoveMusic = (nameSong: string) => {
-    removeSongFromPlaylist(nameSong); // Removendo a música do Zustand
+    removeSongFromPlaylist(nameSong);
   };
   console.log(playlist);
 

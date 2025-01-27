@@ -18,7 +18,7 @@ type ClientStore = {
   };
   playlist: Song[];
   setClient: (clientData: { name: string; id: number }) => void;
-  addSongToPlaylist: (song: Song) => void;
+  addSongToPlaylist: (song: Song | any) => void;
   removeSongFromPlaylist: (nameSong: string) => void;
   clearPlaylist: () => void;
 };

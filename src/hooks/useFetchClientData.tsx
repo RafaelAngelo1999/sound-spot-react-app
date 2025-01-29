@@ -5,21 +5,21 @@ import { useParams, usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 export function useFetchClientData() {
-  const { id } = useParams(); // Pega o ID da URL
-  const pathname = usePathname(); // returns "/dashboard" on /dashboard?foo=bar
+  const { id } = useParams();
+  const pathname = usePathname();
   const setClient = useClientStore((state: any) => state?.setClient);
 
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["clientData", id], // Chave única como array
-    queryFn: () => fetchClient(id as string), // Função de busca
-    enabled: !!id, // Apenas executa se o ID existir
-    retry: 3, // Tenta 3 vezes em caso de falha
-    staleTime: 300000, // Cache de 5 minutos
+    queryKey: ["clientData", id],
+    queryFn: () => fetchClient(id as string),
+    enabled: !!id,
+    retry: 3,
+    staleTime: 300000,
   });
 
   useEffect(() => {
     if (data) {
-      setClient(data); // Salva no Zustand
+      setClient(data);
     }
   }, [data, setClient]);
 

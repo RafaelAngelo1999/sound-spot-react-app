@@ -1,23 +1,11 @@
+import { Client, clientInitial } from "@/data/client";
+import { Song } from "@/data/song";
 import { create } from "zustand";
 
-// Tipo da música
-type Song = {
-  id: string;
-  name: string;
-  artist: string;
-  img: string;
-  idSpotify: string;
-  value: number;
-};
-
-// Tipo do estado do cliente
 type ClientStore = {
-  client: {
-    name: string;
-    id: number;
-  };
+  client: Client;
   playlist: Song[];
-  setClient: (clientData: { name: string; id: number }) => void;
+  setClient: (client: Client) => void;
   addSongToPlaylist: (song: Song | any) => void;
   removeSongFromPlaylist: (nameSong: string) => void;
   clearPlaylist: () => void;
@@ -28,7 +16,7 @@ const getPlaylistFromStorage = (): Song[] => {
     const storedPlaylist = localStorage.getItem("playlist");
     return storedPlaylist ? JSON.parse(storedPlaylist) : [];
   }
-  return []; // Retorna um array vazio caso localStorage não esteja disponível
+  return [];
 };
 
 const savePlaylistToStorage = (playlist: Song[]) => {
@@ -38,32 +26,29 @@ const savePlaylistToStorage = (playlist: Song[]) => {
 };
 
 const useClientStore = create<ClientStore>((set) => ({
-  client: { name: "", id: 0 },
-  playlist: getPlaylistFromStorage(), // Inicializa com a playlist do localStorage
-  setClient: (clientData) => set({ client: clientData }),
+  client: clientInitial,
+  playlist: getPlaylistFromStorage(),
+  setClient: (client) => set({ client: client }),
 
-  // Função para adicionar uma música à playlist
   addSongToPlaylist: (song) =>
     set((state) => {
       const updatedPlaylist = [...state.playlist, { ...song }];
-      savePlaylistToStorage(updatedPlaylist); // Atualiza o localStorage
+      savePlaylistToStorage(updatedPlaylist);
       return { playlist: updatedPlaylist };
     }),
 
-  // Função para remover uma música da playlist
   removeSongFromPlaylist: (nameSong) =>
     set((state) => {
       const updatedPlaylist = state.playlist.filter(
         (song) => song.name !== nameSong
       );
-      savePlaylistToStorage(updatedPlaylist); // Atualiza o localStorage
+      savePlaylistToStorage(updatedPlaylist);
       return { playlist: updatedPlaylist };
     }),
 
-  // Função para apagar toda a playlist
   clearPlaylist: () =>
     set(() => {
-      savePlaylistToStorage([]); // Limpa o localStorage
+      savePlaylistToStorage([]);
       return { playlist: [] };
     }),
 }));

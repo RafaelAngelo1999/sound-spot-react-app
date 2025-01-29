@@ -7,7 +7,6 @@ import ConfirmAddDialog from "./confirm-add-dialog";
 import useClientStore from "@/store/useClientStore";
 
 interface AlbumListProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   albums: any[];
   aspectRatio: "portrait" | "square" | undefined;
   width: number;

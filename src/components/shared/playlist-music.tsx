@@ -1,7 +1,7 @@
 import { PlusCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SelectedMusicList from "@/components/music/select-music-list";
-import useClientStore from "@/store/useClientStore"; // Importando o Zustand
+import useClientStore from "@/store/useClientStore";
 
 const PlayListMusic: React.FC = () => {
   const playlist = useClientStore((state) => state.playlist);
@@ -23,7 +23,6 @@ const PlayListMusic: React.FC = () => {
   const handleRemoveMusic = (nameSong: string) => {
     removeSongFromPlaylist(nameSong);
   };
-  console.log(playlist);
 
   return (
     <div className="overflow-x-hidden">
@@ -41,8 +40,8 @@ const PlayListMusic: React.FC = () => {
                 </Button>
               </div>
               <SelectedMusicList
-                musicList={playlist} // Usando a playlist do Zustand
-                onRemove={handleRemoveMusic} // Passando a função para remover músicas
+                musicList={playlist}
+                onRemove={handleRemoveMusic}
               />
             </div>
           </div>

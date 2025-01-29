@@ -10,8 +10,8 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { Button } from "../ui/button";
-import { Trash2 } from "lucide-react"; // Para o ícone de excluir
-import Image from "next/image"; // Importe o Image do Next.js
+import { Trash2 } from "lucide-react";
+import Image from "next/image";
 
 interface SelectedMusicDataTableProps {
   musicList:
@@ -33,7 +33,7 @@ const SelectedMusicDataTable: React.FC<SelectedMusicDataTableProps> = ({
 }) => {
   const getTotalValue = (): string => {
     const total = musicList.reduce((sum, music) => sum + music.value, 0);
-    return total.toFixed(2); // Retorna o valor como string com 2 casas decimais
+    return total.toFixed(2);
   };
 
   console.log(musicList);

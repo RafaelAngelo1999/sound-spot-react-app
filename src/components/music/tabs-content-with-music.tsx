@@ -4,7 +4,6 @@ import AlbumList from "@/components/music/album-list";
 import SearchInput from "./search-input";
 
 interface TabsContentWithMusicProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   albums: any[];
 }
 
@@ -27,7 +26,6 @@ const TabsContentWithMusic: React.FC<TabsContentWithMusicProps> = ({
         </div>
       </div>
 
-      {/* AlbumList component with only 3 albums */}
       <div className="my-4">
         <AlbumList
           albums={albums.slice(0, 3)}

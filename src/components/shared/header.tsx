@@ -8,7 +8,7 @@ const Header: React.FC = () => {
     <header
       className={cn(
         "w-full bg-primary text-primary-foreground",
-        "fixed top-0 left-0 z-80 shadow-lg h-[80px]" // Altura fixa de 80px
+        "fixed top-0 left-0 z-80 shadow-lg h-[80px]"
       )}
     >
       <div className="container mx-auto px-4 flex h-full items-center justify-between">

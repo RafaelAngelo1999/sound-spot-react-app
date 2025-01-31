@@ -10,11 +10,14 @@ import { HeaderMusic } from "@/components/shared/header-music";
 import PaymentOptionsCard from "@/components/music/payment-options-card";
 import OrderSummaryCard from "@/components/music/order-summary-card";
 import PaymentActions from "@/components/music/payment-actions";
-import { useFetchClientData } from "@/hooks/useFetchClientData";
+
 import useClientStore from "@/store/useClientStore";
 import PlayListMusic from "@/components/shared/playlist-music";
-import { useTabsStore } from "@/store/useTabsStore";
 import MusicEmptyPlaceholder from "@/components/music/music-empty-placeholder";
+import FloatingButtonsContainer from "@/components/music/floating-buttons-container";
+
+import { useFetchClientData } from "@/hooks/useFetchClientData";
+import { useTabsStore } from "@/store/useTabsStore";
 
 export default function MusicPage() {
   const { isLoading, isError } = useFetchClientData();
@@ -24,8 +27,17 @@ export default function MusicPage() {
   if (isLoading) return <div>Carregando...</div>;
   if (isError) return <div>Erro ao buscar os dados</div>;
 
+  const showPlaylist = activeTab !== "playlist" && playlist.length > 0;
+  const showPayment = activeTab !== "payments" && playlist.length > 0;
   return (
     <Body>
+      <FloatingButtonsContainer
+        isPlaylistVisible={showPlaylist}
+        isPaymentVisible={showPayment}
+        onRedirectPlaylist={() => setActiveTab("playlist")}
+        onRedirectPayment={() => setActiveTab("payments")}
+      />
+
       <Tabs
         value={activeTab}
         onValueChange={setActiveTab}

@@ -27,7 +27,7 @@ export default function MusicPage() {
   if (isLoading) return <div>Carregando...</div>;
   if (isError) return <div>Erro ao buscar os dados</div>;
 
-  const showPlaylist = activeTab !== "playlist" && playlist.length > 0;
+  const showPlaylist = activeTab === "music" && playlist.length > 0;
   const showPayment = activeTab !== "payments" && playlist.length > 0;
   return (
     <Body>

@@ -2,7 +2,7 @@ export type Song = {
   id: string;
   name: string;
   artist: string;
-  img: string;
+  cover: string;
   idSpotify: string;
   value: number;
 };

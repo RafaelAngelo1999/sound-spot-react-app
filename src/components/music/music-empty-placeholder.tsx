@@ -1,6 +1,12 @@
 import { Button } from "../ui/button";
 
-export function MusicEmptyPlaceholder() {
+interface MusicEmptyPlaceholderProps {
+  onClickButton: () => void;
+}
+
+const MusicEmptyPlaceholder: React.FC<MusicEmptyPlaceholderProps> = ({
+  onClickButton,
+}) => {
   return (
     <div className="flex h-[450px] shrink-0 items-center justify-center rounded-md border border-dashed">
       <div className="mx-auto flex max-w-[420px] flex-col items-center justify-center text-center">
@@ -24,8 +30,10 @@ export function MusicEmptyPlaceholder() {
         <p className="mb-4 mt-2 text-sm text-muted-foreground">
           Você não adicionou nenhuma música. 😢
         </p>
-        <Button>Adicionar Musica 🚀</Button>;
+        <Button onClick={onClickButton}>Adicionar Musica 🚀</Button>;
       </div>
     </div>
   );
-}
+};
+
+export default MusicEmptyPlaceholder;

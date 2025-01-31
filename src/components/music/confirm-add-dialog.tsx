@@ -7,25 +7,37 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { useState } from "react";
 
 const ConfirmAddDialog = ({ open, onClose, onConfirm, song }) => {
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+
   return (
-    <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Incluir Musica </DialogTitle>
-          <DialogDescription>
-            Deseja incluir a musica {song?.id}?
-          </DialogDescription>
-        </DialogHeader>
-        <DialogFooter>
-          <Button variant="secondary" onClick={onClose}>
-            Cancelar
-          </Button>
-          <Button onClick={() => onConfirm(song)}>Adicionar</Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+    <>
+      {/* <div className="p-4">
+        <InputWithPopover
+          isOpen={true}
+          setIsOpen={setIsPopoverOpen}
+          onRedirect={() => console.log("Redirecionando...")}
+        />
+      </div> */}
+      <Dialog open={open} onOpenChange={onClose}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Incluir Musica </DialogTitle>
+            <DialogDescription>
+              Deseja incluir a musica {song?.id}?
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button variant="secondary" onClick={onClose}>
+              Cancelar
+            </Button>
+            <Button onClick={() => onConfirm(song)}>Adicionar</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
 

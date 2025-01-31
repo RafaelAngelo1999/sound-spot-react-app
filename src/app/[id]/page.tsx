@@ -19,7 +19,7 @@ import MusicEmptyPlaceholder from "@/components/music/music-empty-placeholder";
 export default function MusicPage() {
   const { isLoading, isError } = useFetchClientData();
   const playlist = useClientStore((state) => state.playlist);
-  const { activeTab, defaultTab, setActiveTab } = useTabsStore();
+  const { activeTab, setActiveTab } = useTabsStore();
 
   if (isLoading) return <div>Carregando...</div>;
   if (isError) return <div>Erro ao buscar os dados</div>;

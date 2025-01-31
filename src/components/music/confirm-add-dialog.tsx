@@ -7,10 +7,9 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useState } from "react";
 
 const ConfirmAddDialog = ({ open, onClose, onConfirm, song }) => {
-  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  // const [isPopoverOpen, setIsPopoverOpen] = useState(false);
 
   return (
     <>

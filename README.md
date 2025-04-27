@@ -101,9 +101,4 @@ Contribuições são bem-vindas!
 
 ---
 
-## 📄 **Licença**
-Este projeto está licenciado sob a **MIT License**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
-
 💻 Desenvolvido com ❤️ por [Rafael Angelo](https://github.com/RafaelAngelo1999).
